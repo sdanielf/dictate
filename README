@@ -1,0 +1,25 @@
+Dictate
+=======
+
+Dictate is an eSpeak based dictation program.
+It reads a text slowly, allowing users to write it. Also can pause the
+dictation, spell difficult words and identify punctuation marks.
+
+Installing Dictate from its source code
+---------------------------------------
+
+First, download the source code and cd into the source directory.
+Then, type:
+     python setup.py install
+
+Using Dictate
+-------------
+
+Use: dictate "your text here"  -- to dictate the given text.
+     dictate "tu texto aquí" -ves -- to use espeak in Spanish [1].
+     dictate "`cat /path/to/file.txt`" -- to read the text from a file.
+
+See also
+--------
+
+[1] http://espeak.sourceforge.net/languages.html

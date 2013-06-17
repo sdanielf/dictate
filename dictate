@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2013 S. Daniel Francis <francis@sugarlabs.org>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+# MA 02110-1301, USA.
+
+import os
+import sys
+
+import termios
+import fcntl
+
+from dictation.keys import keys
+from dictation import wordplayer
+
+
+def quit(word):
+    exit()
+
+
+keys['q'] = ('Quit', quit)
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1 or sys.argv[1] == '--help':
+        print 'Dictate 0.1'
+        print '-----------'
+        print 'Usage: %s TEXT [options]' % sys.argv[0]
+        print '       %s `cat /path/to/file.txt` [options] \
+- To read the text from a file'
+        print '       %s TEXT -ves - To dictate a text in Spanish'
+        print '       %s --help - To show this help message and exit'
+        print
+        print '[options] are given to espeak. \
+See espeak --help for more information.'
+        print
+        print 'Submit bugs to https://github.com/sdanielf/dictate/issues'
+        exit()
+    else:
+        print 'Welcome to Dictate'
+        print '------------------'
+        print 'Keys:'
+        for i in keys:
+            print i.replace(' ', 'spacebar'), ' ', keys[i][0]
+        print
+
+
+def check_keys():
+    returnvalue = None
+    try:
+        fd = sys.stdin.fileno()
+        oldterm = termios.tcgetattr(fd)
+        newattr = termios.tcgetattr(fd)
+        newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO
+        termios.tcsetattr(fd, termios.TCSANOW, newattr)
+
+        oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
+        fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
+
+        try:
+            c = sys.stdin.read(1).lower()
+            #print 'Got character', repr(c)
+            if c in keys:
+                print
+                #print c
+                returnvalue = keys[c][1]
+        except:
+            pass
+        finally:
+            termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
+            fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
+    except: pass
+    return returnvalue
+
+player = wordplayer.WordPlayer(sys.argv, check_keys)
