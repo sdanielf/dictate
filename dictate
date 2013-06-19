@@ -24,8 +24,9 @@ import sys
 import termios
 import fcntl
 
+from dictation import i18n
+i18n
 from gettext import gettext as _
-
 from dictation.keys import keys
 from dictation import wordplayer
 
@@ -47,7 +48,7 @@ Usage: cmd TEXT [options]
 
 Type "man dictate" to see the Dictate manual.
 Submit bugs to https://github.com/sdanielf/dictate/issues
-""").replace(sys.argv[0])
+""").replace('cmd', sys.argv[0])
 
 if __name__ == '__main__':
     if len(sys.argv) == 1 or sys.argv[1] == '--help':
