@@ -24,6 +24,8 @@ import sys
 import termios
 import fcntl
 
+from gettext import gettext as _
+
 from dictation.keys import keys
 from dictation import wordplayer
 
@@ -32,30 +34,32 @@ def quit(word):
     exit()
 
 
-keys['q'] = ('Quit', quit)
+keys['q'] = (_('Quit'), quit)
+
+helpmsg = _("""Dictate 0.1
+-----------
+Usage: cmd TEXT [options]
+       cmd `cat /path/to/file.txt` [options] - To read the text from a file'
+       cmd TEXT -ves - To dictate a text in Spanish
+       cmd --help - To show this help message and exit
+
+[options] are given to espeak. See espeak --help for more information.
+
+Type "man dictate" to see the Dictate manual.
+Submit bugs to https://github.com/sdanielf/dictate/issues
+""").replace(sys.argv[0])
 
 if __name__ == '__main__':
     if len(sys.argv) == 1 or sys.argv[1] == '--help':
-        print 'Dictate 0.1'
-        print '-----------'
-        print 'Usage: %s TEXT [options]' % sys.argv[0]
-        print '       %s `cat /path/to/file.txt` [options] \
-- To read the text from a file'
-        print '       %s TEXT -ves - To dictate a text in Spanish'
-        print '       %s --help - To show this help message and exit'
-        print
-        print '[options] are given to espeak. \
-See espeak --help for more information.'
-        print
-        print 'Type "man dictate" to see the Dictate manual.'
-        print 'Submit bugs to https://github.com/sdanielf/dictate/issues'
+        print helpmsg
         exit()
     else:
-        print 'Welcome to Dictate'
-        print '------------------'
-        print 'Keys:'
+        welcomemsg = _('Welcome to Dictate')
+        print welcomemsg
+        print '-' * len(welcomemsg)
+        print _('Keys:')
         for i in keys:
-            print i.replace(' ', 'spacebar'), ' ', keys[i][0]
+            print i.replace(' ', _('spacebar')), ' ', keys[i][0]
         print
 
 

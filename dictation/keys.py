@@ -15,12 +15,14 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
+from gettext import gettext as _
+
 def pause(wordplayer):
-    raw_input('Press Enter to continue')
+    raw_input(_('Press Enter to continue'))
 
 def spell(wordplayer):
     for i in wordplayer.current_word:
         wordplayer.speak(i)
 
-keys = {' ': ('Pause', pause),
-        's': ('Spell', spell)}
+keys = {' ': (_('Pause'), pause),
+        's': (_('Spell'), spell)}
