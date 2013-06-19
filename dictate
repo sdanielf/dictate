@@ -47,6 +47,7 @@ if __name__ == '__main__':
         print '[options] are given to espeak. \
 See espeak --help for more information.'
         print
+        print 'Type "man dictate" to see the Dictate manual.'
         print 'Submit bugs to https://github.com/sdanielf/dictate/issues'
         exit()
     else:

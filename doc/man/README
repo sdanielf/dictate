@@ -1,0 +1,2 @@
+Man files can be generated through typing:
+$ sphinx-build -b man doc doc/man
