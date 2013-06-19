@@ -1,3 +1,4 @@
+include COPYING
 include doc/conf.py
 include doc/index.rst
 include doc/man/README
