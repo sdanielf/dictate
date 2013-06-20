@@ -5,9 +5,9 @@
 # Daniel Francis <francis@sugarlabs.org>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dictate 0.1\n"
+"Project-Id-Version: Dictate 0.2\n"
 "Report-Msgid-Bugs-To: francis@sugarlabs.org\n"
-"POT-Creation-Date: 2013-06-20 11:58-0300\n"
+"POT-Creation-Date: 2013-06-20 17:53-0300\n"
 "PO-Revision-Date: 2013-06-19 17:37-0300\n"
 "Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
 "Language-Team: Spanish\n"
@@ -24,7 +24,7 @@ msgstr "Salir"
 
 #: dictate:40
 msgid ""
-"Dictate 0.1\n"
+"Dictate 0.2\n"
 "-----------\n"
 "Usage: cmd TEXT [options]\n"
 "       cmd `cat /path/to/file.txt` [options] - To read the text from a file\n"
@@ -36,7 +36,7 @@ msgid ""
 "Type \"man dictate\" to see the Dictate manual.\n"
 "Submit bugs to https://github.com/sdanielf/dictate/issues\n"
 msgstr ""
-"Dictate 0.1\n"
+"Dictate 0.2\n"
 "-----------\n"
 "Uso: cmd TEXTO [opciones]\n"
 "     cmd `cat /ruta/del/archivo.txt` [opciones] - Para leer el texto desde "
@@ -62,14 +62,14 @@ msgstr "Teclas:"
 msgid "spacebar"
 msgstr "barra espaciadora"
 
-#: dictation/keys.py:21
+#: dictation/keys.py:22
 msgid "Press Enter to continue"
 msgstr "Presione Enter para continuar"
 
-#: dictation/keys.py:27
+#: dictation/keys.py:29
 msgid "Pause"
 msgstr "Pausar"
 
-#: dictation/keys.py:28
+#: dictation/keys.py:30
 msgid "Spell"
 msgstr "Deletrear"

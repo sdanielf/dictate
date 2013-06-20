@@ -106,7 +106,7 @@ build.sub_commands.append(('build_trans', None))
 build.sub_commands.append(('build_manpage', None))
 
 setup(name='dictate',
-      version='0.1',
+      version='0.2',
       description='Command-line dictation utility.',
       author='Daniel Francis',
       author_email='francis@sugarlabs.org',
@@ -120,7 +120,7 @@ setup(name='dictate',
       long_description="""Dictation is an eSpeak-based dictation utility.
 It reads a text slowly, allowing users to write it. Also can pause the
 dictation, spell difficult words and identify punctuation marks.""",
-      classifiers=['Development Status :: 1 - Planning',
+      classifiers=['Development Status :: 2 - Pre-Alpha',
                    'Environment :: Console',
                    'Intended Audience :: Education',
                    'License :: OSI Approved :: GNU General Public License v3 \

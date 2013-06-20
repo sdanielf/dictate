@@ -22,7 +22,7 @@ PYFILES="dictate dictation/*.py"
 # Generate main pot
 xgettext --language=Python --keyword=_ --output=po/dictation.pot \
     --copyright-holder="Daniel Francis" --package-name="Dictate" \
-    --package-version=0.1 --msgid-bugs-address="francis@sugarlabs.org" \
+    --package-version=0.2 --msgid-bugs-address="francis@sugarlabs.org" \
     $PYFILES
 sed -i 's/SOME DESCRIPTIVE TITLE/Dictate Translations/g' po/dictation.pot
 sed -i 's/PACKAGE/Dictate/g' po/dictation.pot

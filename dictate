@@ -37,7 +37,7 @@ def quit(word):
 
 keys['q'] = (_('Quit'), quit)
 
-helpmsg = _("""Dictate 0.1
+helpmsg = _("""Dictate 0.2
 -----------
 Usage: cmd TEXT [options]
        cmd `cat /path/to/file.txt` [options] - To read the text from a file
