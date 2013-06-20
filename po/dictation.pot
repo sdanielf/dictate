@@ -1,0 +1,61 @@
+# Dictate Translations.
+# Copyright (C) 2013 Daniel Francis
+# This file is distributed under the same license as the Dictate package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Dictate 0.1\n"
+"Report-Msgid-Bugs-To: francis@sugarlabs.org\n"
+"POT-Creation-Date: 2013-06-20 11:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dictate:38
+msgid "Quit"
+msgstr ""
+
+#: dictate:40
+msgid ""
+"Dictate 0.1\n"
+"-----------\n"
+"Usage: cmd TEXT [options]\n"
+"       cmd `cat /path/to/file.txt` [options] - To read the text from a file\n"
+"       cmd TEXT -ves - To dictate a text in Spanish\n"
+"       cmd --help - To show this help message and exit\n"
+"\n"
+"[options] are given to espeak. See espeak --help for more information.\n"
+"\n"
+"Type \"man dictate\" to see the Dictate manual.\n"
+"Submit bugs to https://github.com/sdanielf/dictate/issues\n"
+msgstr ""
+
+#: dictate:58
+msgid "Welcome to Dictate"
+msgstr ""
+
+#: dictate:61
+msgid "Keys:"
+msgstr ""
+
+#: dictate:63
+msgid "spacebar"
+msgstr ""
+
+#: dictation/keys.py:21
+msgid "Press Enter to continue"
+msgstr ""
+
+#: dictation/keys.py:27
+msgid "Pause"
+msgstr ""
+
+#: dictation/keys.py:28
+msgid "Spell"
+msgstr ""

@@ -1,5 +1,5 @@
-Welcome to Dictate's documentation!
-===================================
+Dictate's documentation
+=======================
 
 Command-line usage
 ------------------

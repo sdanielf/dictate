@@ -36,7 +36,5 @@ nosetests.xml
 .pydevproject
 
 # Built documentation
-doc/man/*.1
-doc/man/*.gz
-doc/.doctrees
-doc/man/.doctrees
+doc/man/
+*.doctrees

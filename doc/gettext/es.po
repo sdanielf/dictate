@@ -1,0 +1,93 @@
+# Spanish translations for Dictate package.
+# Copyright (C) 2013, Daniel Francis
+# This file is distributed under the same license as the Dictate package.
+#
+# Daniel Francis <francis@sugarlabs.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dictate 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-20 11:58\n"
+"PO-Revision-Date: 2013-06-19 17:53-0300\n"
+"Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
+"Language-Team: Spanish <>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+# 5973ba92505d48ed8ab1db985a176e38
+#: ../index.rst:2
+msgid "Dictate's documentation"
+msgstr "Documentación de Dictate"
+
+# e40d9d63f18f4a3cbfc597566592bb46
+#: ../index.rst:5
+msgid "Command-line usage"
+msgstr "Uso en la linea de comandos"
+
+# 78b74d2828db4c2291d827e67d90734f
+#: ../index.rst:7
+msgid "The **first** argument must be the text to speak."
+msgstr "El **primer** argumento debe ser el texto a hablar."
+
+# 515336f125694f10bee2ebeeb933cfad
+#: ../index.rst:9
+msgid "See an example::"
+msgstr "Ver un ejemplo::"
+
+# 72e45fc8954a405eb21e45d1aabae27c
+#: ../index.rst:13
+msgid "If you need to load the text from a file, you can type::"
+msgstr "Si necesita cargar el texto desde un archivo, puede escribir::"
+
+# 78c2bd4af1944da69d534f2255638a96
+#: ../index.rst:17
+msgid ""
+"Other arguments are given to the espeak command, so the languaje can be set::"
+msgstr ""
+"Otros argumentos son proporcionados al comando espeak, de esta forma se "
+"puede configurar el idioma::"
+
+# 6ce995c8bb38484e8a6769010df35e75
+#: ../index.rst:21
+msgid "See `eSpeak Usage <http://espeak.sourceforge.net/commands.html>`_."
+msgstr "Ver `Uso de eSpeak <http://espeak.sourceforge.net/commands.html>`_."
+
+# f7aa6e155a6747ba851e4709f5780c26
+#: ../index.rst:23
+msgid "A short help message can be shown by typing::"
+msgstr "Se puede mostrar un mensaje corto de ayuda escribiendo::"
+
+# 415b6b7ae4614046b1730f81f2c76a7f
+#: ../index.rst:28
+msgid "Runtime options"
+msgstr "Opciones de ejecución"
+
+# 9fd1bf8a9abd4a56815e891e3abb6d11
+#: ../index.rst:30
+msgid ""
+"Once the program is running, some keys can be used to control the dictation. "
+"The keys are displayed when the program starts. The most important are:"
+msgstr ""
+"Una vez que el programa está funcionando, pueden usarse algunas teclas para "
+"controlar el dictado. Las teclas se muestran cuando el programa inicia. Las "
+"más importantes son:"
+
+# 8f98ee49fef04d188cb770f6a7bfc5fb
+#: ../index.rst:33
+msgid "``q`` to stop the dictation."
+msgstr "``q`` para detener el dictado."
+
+# a5c6b6cb0c1a4ba39a8389b9a3fa1149
+#: ../index.rst:34
+msgid "``spacebar`` to pause the dictation until ``enter`` is pressed."
+msgstr ""
+"``barra espaciadora`` para pausar el dictado hasta que se presione ``enter``."
+
+# d1384443e220449b83d916835a760453
+#: ../index.rst:35
+msgid "``s`` to spell the current word."
+msgstr "``s`` para deletrear la palabra actual."

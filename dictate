@@ -40,7 +40,7 @@ keys['q'] = (_('Quit'), quit)
 helpmsg = _("""Dictate 0.1
 -----------
 Usage: cmd TEXT [options]
-       cmd `cat /path/to/file.txt` [options] - To read the text from a file'
+       cmd `cat /path/to/file.txt` [options] - To read the text from a file
        cmd TEXT -ves - To dictate a text in Spanish
        cmd --help - To show this help message and exit
 

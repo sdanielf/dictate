@@ -1,0 +1,75 @@
+# Dictate Translations.
+# Copyright (C) 2013 Daniel Francis
+# This file is distributed under the same license as the Dictate package.
+#
+# Daniel Francis <francis@sugarlabs.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dictate 0.1\n"
+"Report-Msgid-Bugs-To: francis@sugarlabs.org\n"
+"POT-Creation-Date: 2013-06-20 11:58-0300\n"
+"PO-Revision-Date: 2013-06-19 17:37-0300\n"
+"Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: dictate:38
+msgid "Quit"
+msgstr "Salir"
+
+#: dictate:40
+msgid ""
+"Dictate 0.1\n"
+"-----------\n"
+"Usage: cmd TEXT [options]\n"
+"       cmd `cat /path/to/file.txt` [options] - To read the text from a file\n"
+"       cmd TEXT -ves - To dictate a text in Spanish\n"
+"       cmd --help - To show this help message and exit\n"
+"\n"
+"[options] are given to espeak. See espeak --help for more information.\n"
+"\n"
+"Type \"man dictate\" to see the Dictate manual.\n"
+"Submit bugs to https://github.com/sdanielf/dictate/issues\n"
+msgstr ""
+"Dictate 0.1\n"
+"-----------\n"
+"Uso: cmd TEXTO [opciones]\n"
+"     cmd `cat /ruta/del/archivo.txt` [opciones] - Para leer el texto desde "
+"un archivo\n"
+"     cmd TEXTO -ves - Para leer el texto en español\n"
+"     cmd --help - Para mostrar este mensaje de ayuda y salir\n"
+"\n"
+"Las [opciones] se le proporcionan a espeak. Ver espeak --help para más "
+"información.\n"
+"\n"
+"Escriba \"man dictate\" para ver el manual de Dictate.\n"
+"Reporte errores en https://github.com/sdanielf/dictate/issues\n"
+
+#: dictate:58
+msgid "Welcome to Dictate"
+msgstr "Bienvenido a Dictate"
+
+#: dictate:61
+msgid "Keys:"
+msgstr "Teclas:"
+
+#: dictate:63
+msgid "spacebar"
+msgstr "barra espaciadora"
+
+#: dictation/keys.py:21
+msgid "Press Enter to continue"
+msgstr "Presione Enter para continuar"
+
+#: dictation/keys.py:27
+msgid "Pause"
+msgstr "Pausar"
+
+#: dictation/keys.py:28
+msgid "Spell"
+msgstr "Deletrear"

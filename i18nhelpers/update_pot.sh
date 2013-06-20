@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # Copyright (C) 2013 S. Daniel Francis <francis@sugarlabs.org>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -15,18 +17,27 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
-import gettext
-import sys
-import os
+PYFILES="dictate dictation/*.py"
 
-LOCALE_DOMAIN = 'dictate'
+# Generate main pot
+xgettext --language=Python --keyword=_ --output=po/dictation.pot \
+    --copyright-holder="Daniel Francis" --package-name="Dictate" \
+    --package-version=0.1 --msgid-bugs-address="francis@sugarlabs.org" \
+    $PYFILES
+sed -i 's/SOME DESCRIPTIVE TITLE/Dictate Translations/g' po/dictation.pot
+sed -i 's/PACKAGE/Dictate/g' po/dictation.pot
+sed -i 's/(C) YEAR/(C) 2013/g' po/dictation.pot
+sed -i 's/CHARSET/UTF-8/g' po/dictation.pot
 
-moduledir = os.path.dirname(__file__)
-if moduledir.startswith(sys.prefix):
-    LOCALE_DIR = os.path.join(sys.prefix, 'share', 'locale')
-else:
-    LOCALE_DIR = os.path.join('/'.join(moduledir.split('/')[:-1]), 'locale')
+# Generate Sphinx pot
+sphinx-build -b gettext doc doc/gettext
 
-gettext.bindtextdomain(LOCALE_DOMAIN, LOCALE_DIR)
-gettext.textdomain(LOCALE_DOMAIN)
-gettext.install(LOCALE_DOMAIN)
+# Merge main po files
+for file in po/*.po; do
+    msgmerge $file po/dictation.pot -o $file
+done
+
+# Merge Sphinx po files
+for file in doc/gettext/*.po; do
+    msgmerge $file doc/gettext/index.pot -o $file
+done

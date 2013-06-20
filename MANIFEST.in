@@ -1,4 +1,9 @@
 include COPYING
+include po/*.po
+include po/*.pot
 include doc/conf.py
 include doc/index.rst
-include doc/man/README
+include doc/gettext/*.po
+include doc/gettext/*.pot
+include i18nhelpers/*.py
+include i18nhelpers/*.sh

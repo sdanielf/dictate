@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013, Daniel Francis
+# This file is distributed under the same license as the Dictate package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Dictate 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-20 11:58\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../index.rst:2
+# 5973ba92505d48ed8ab1db985a176e38
+msgid "Dictate's documentation"
+msgstr ""
+
+#: ../index.rst:5
+# e40d9d63f18f4a3cbfc597566592bb46
+msgid "Command-line usage"
+msgstr ""
+
+#: ../index.rst:7
+# 78b74d2828db4c2291d827e67d90734f
+msgid "The **first** argument must be the text to speak."
+msgstr ""
+
+#: ../index.rst:9
+# 515336f125694f10bee2ebeeb933cfad
+msgid "See an example::"
+msgstr ""
+
+#: ../index.rst:13
+# 72e45fc8954a405eb21e45d1aabae27c
+msgid "If you need to load the text from a file, you can type::"
+msgstr ""
+
+#: ../index.rst:17
+# 78c2bd4af1944da69d534f2255638a96
+msgid "Other arguments are given to the espeak command, so the languaje can be set::"
+msgstr ""
+
+#: ../index.rst:21
+# 6ce995c8bb38484e8a6769010df35e75
+msgid "See `eSpeak Usage <http://espeak.sourceforge.net/commands.html>`_."
+msgstr ""
+
+#: ../index.rst:23
+# f7aa6e155a6747ba851e4709f5780c26
+msgid "A short help message can be shown by typing::"
+msgstr ""
+
+#: ../index.rst:28
+# 415b6b7ae4614046b1730f81f2c76a7f
+msgid "Runtime options"
+msgstr ""
+
+#: ../index.rst:30
+# 9fd1bf8a9abd4a56815e891e3abb6d11
+msgid "Once the program is running, some keys can be used to control the dictation. The keys are displayed when the program starts. The most important are:"
+msgstr ""
+
+#: ../index.rst:33
+# 8f98ee49fef04d188cb770f6a7bfc5fb
+msgid "``q`` to stop the dictation."
+msgstr ""
+
+#: ../index.rst:34
+# a5c6b6cb0c1a4ba39a8389b9a3fa1149
+msgid "``spacebar`` to pause the dictation until ``enter`` is pressed."
+msgstr ""
+
+#: ../index.rst:35
+# d1384443e220449b83d916835a760453
+msgid "``s`` to spell the current word."
+msgstr ""
+
