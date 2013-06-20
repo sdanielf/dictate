@@ -10,7 +10,15 @@ Installing Dictate from its source code
 
 First, download the source code and cd into the source directory.
 Then, type:
-     python setup.py install
+     ./setup.py install
+
+Using Dictate without installing
+--------------------------------
+
+The program can be used without installing it, through building it first:
+    ./setup.py build
+
+In local installations, the command dictate is replaced with ./dictate.
 
 Using Dictate
 -------------
