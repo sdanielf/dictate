@@ -9,6 +9,8 @@ docdir = os.path.join(srcdir, 'doc')
 docgettextdir = os.path.join(docdir, 'gettext')
 mandir = os.path.join(docdir, 'man')
 
+data_files = []
+
 class build_manpage(Command):
     description = 'Generate man pages.'
     user_options = []
@@ -33,48 +35,7 @@ class build_manpage(Command):
                 if os.path.exists('%s/dictate.1.gz' % build_dir):
                     os.remove('%s/dictate.1.gz' % build_dir)
                 os.system('gzip %s/*.1' % build_dir)
-
-
-from distutils.command.install_data import install_data as _install_data
-
-import os
-
-class build_trans(Command):
-    description = 'Compile .po files into .mo files'
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        srcdir = os.path.join(os.path.abspath(os.curdir))
-        translations = [(os.path.join(srcdir, 'po'),
-                         os.path.join(srcdir, 'locale'), 'dictate'),
-                        (os.path.join(srcdir, 'doc', 'gettext'),
-                         os.path.join(srcdir, 'doc', 'locale'), 'index')]
-        for po_dir, locale_dir, module in translations:
-            os.system('%s/i18nhelpers/buildmo.py %s %s %s' %\
-                        (srcdir, po_dir, locale_dir, module))
-
-build.sub_commands.append(('build_trans', None))
-build.sub_commands.append(('build_manpage', None))
-
-class install_data(_install_data):
-    def run(self):
-        self.data_files = [] if self.data_files == None else self.data_files
-        self.append_mo('%s/locale/' % srcdir)
         self.install_man('doc/man')
-        print 'Data files are', self.data_files
-        _install_data.run(self)
-
-    def append_mo(self, directory):
-        for lang in os.listdir(directory):
-            lang_dir = os.path.join('share', 'locale', lang,
-                                    'LC_MESSAGES')
-            lang_file = os.path.join('locale', lang, 'LC_MESSAGES',
-                                        'dictate.mo')
-            self.data_files.append((lang_dir, [lang_file]))
 
     def install_man(self, directory):
         for i in os.listdir(directory):
@@ -87,9 +48,40 @@ class install_data(_install_data):
                 for filename in os.listdir(path):
                     if filename.split('.')[-1] == 'gz':
                         files.append(os.path.join(path, filename))
-                self.data_files.append((install_path, files))
+                data_files.append((install_path, files))
 
-build.sub_commands.append(('install_data', None))
+
+class build_trans(Command):
+    description = 'Compile .po files into .mo files'
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        self._srcdir = os.path.join(os.path.abspath(os.curdir))
+        translations = [(os.path.join(self._srcdir, 'po'),
+                         os.path.join(self._srcdir, 'locale'), 'dictate'),
+                        (os.path.join(self._srcdir, 'doc', 'gettext'),
+                         os.path.join(self._srcdir, 'doc', 'locale'),
+                         'index')]
+        for po_dir, locale_dir, module in translations:
+            os.system('%s/i18nhelpers/buildmo.py %s %s %s' %\
+                        (srcdir, po_dir, locale_dir, module))
+
+        self.append_mo(translations[0][1])
+
+    def append_mo(self, directory):
+        for lang in os.listdir(directory):
+            lang_dir = os.path.join('share', 'locale', lang,
+                                    'LC_MESSAGES')
+            lang_file = os.path.join(self._srcdir, 'locale', lang,
+                                     'LC_MESSAGES', 'dictate.mo')
+            data_files.append((lang_dir, [lang_file]))
+
+build.sub_commands.append(('build_trans', None))
+build.sub_commands.append(('build_manpage', None))
 
 setup(name='dictate',
       version='0.1',
@@ -101,8 +93,8 @@ setup(name='dictate',
       packages=['dictation'],
       scripts=['dictate'],
       cmdclass={'build_manpage': build_manpage,
-                'build_trans': build_trans,
-                'install_data': install_data},
+                'build_trans': build_trans},
+      data_files=data_files,
       long_description="""Dictation is an eSpeak-based dictation utility.
 It reads a text slowly, allowing users to write it. Also can pause the
 dictation, spell difficult words and identify punctuation marks.""",
