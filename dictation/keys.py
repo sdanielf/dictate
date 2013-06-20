@@ -17,8 +17,10 @@
 
 from gettext import gettext as _
 
+
 def pause(wordplayer):
     raw_input(_('Press Enter to continue'))
+
 
 def spell(wordplayer):
     for i in wordplayer.current_word:

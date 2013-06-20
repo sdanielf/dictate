@@ -88,7 +88,8 @@ def check_keys():
         finally:
             termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
             fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
-    except: pass
+    except:
+        pass
     return returnvalue
 
 player = wordplayer.WordPlayer(sys.argv, check_keys)

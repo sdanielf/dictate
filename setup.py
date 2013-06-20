@@ -31,6 +31,7 @@ mandir = os.path.join(docdir, 'man')
 
 data_files = []
 
+
 class build_manpage(Command):
     description = 'Generate man pages.'
     user_options = []
@@ -50,7 +51,7 @@ class build_manpage(Command):
                     os.makedirs(build_dir)
                 langopt = ('-Dlanguage=%s' % name) if name != 'man1' else ''
                 print 'Generating %s/dictate.1.gz' % build_dir
-                os.system('sphinx-build -b man %s %s %s' %\
+                os.system('sphinx-build -b man %s %s %s' %
                           (langopt, docdir, build_dir))
                 if os.path.exists('%s/dictate.1.gz' % build_dir):
                     os.remove('%s/dictate.1.gz' % build_dir)
@@ -73,6 +74,7 @@ class build_manpage(Command):
 
 class build_trans(Command):
     description = 'Compile .po files into .mo files'
+
     def initialize_options(self):
         pass
 
@@ -87,8 +89,8 @@ class build_trans(Command):
                          os.path.join(self._srcdir, 'doc', 'locale'),
                          'index')]
         for po_dir, locale_dir, module in translations:
-            os.system('%s/i18nhelpers/buildmo.py %s %s %s' %\
-                        (srcdir, po_dir, locale_dir, module))
+            os.system('%s/i18nhelpers/buildmo.py %s %s %s' %
+                      (srcdir, po_dir, locale_dir, module))
 
         self.append_mo(translations[0][1])
 
@@ -121,10 +123,10 @@ dictation, spell difficult words and identify punctuation marks.""",
       classifiers=['Development Status :: 1 - Planning',
                    'Environment :: Console',
                    'Intended Audience :: Education',
-                   'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+                   'License :: OSI Approved :: GNU General Public License v3 \
+or later (GPLv3+)',
                    'Operating System :: POSIX',
                    'Programming Language :: Python :: 2.7',
                    'Topic :: Education',
                    'Topic :: Multimedia :: Sound/Audio :: Speech',
-                   'Topic :: Utilities']
-)
+                   'Topic :: Utilities'])

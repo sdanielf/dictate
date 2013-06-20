@@ -37,7 +37,7 @@ class WordPlayer():
             end_time = time.time() + len(word) / 2
             while time.time() < end_time:
                 check = self.checker()
-                if check != None:
+                if check is not None:
                     check(self)
 
     def print_all(self):
@@ -45,15 +45,15 @@ class WordPlayer():
 
     def speak(self, word):
         def wait_for_process(process):
-            while process.poll() == None:
+            while process.poll() is None:
                 check = self.checker()
-                if check != None:
+                if check is not None:
                     check(self)
 
         espeak = subprocess.Popen(['espeak', word, '-s', '80',
-                                    '--punct', '-w',
-                                    '/tmp/dictation.wav'] + self.args,
-                                    stdout=FNULL, stderr=FNULL)
+                                   '--punct', '-w',
+                                   '/tmp/dictation.wav'] + self.args,
+                                  stdout=FNULL, stderr=FNULL)
         wait_for_process(espeak)
         gstreamer = subprocess.Popen(['gst-launch-1.0', 'playbin',
                                       'uri=file:///tmp/dictation.wav'],
