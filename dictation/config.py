@@ -29,7 +29,9 @@ settings = {'tbw': ('-t', '--tbw', 'TWB', None,
             'espeak_options': ('-e', '--espeak_options', 'ARGS', None,
                                 espeak_args, ''),
             'language': ('-l', '--language', 'LANG', espeak_voices,
-                         _('Language voice to speak'), 'default')}
+                         _('Language voice to speak'), 'default'),
+            'speed': ('-s', '--speed', 'SPEED', None,
+                      _('Speed in words per minute. From 80 to 450'), 80)}
 options = {}
 
 if not os.path.exists(configpath):
@@ -67,4 +69,14 @@ def get_language():
     if language in espeak_voices:
         return language
     else:
-        return 'default'
+        return settings['language'][-1]
+
+def get_speed():
+    try:
+        speed = int(options['speed'])
+        if speed >= 80 and speed <= 450:
+            return options['speed']
+        else:
+            raise Exception
+    except:
+        return settings['speed'][-1]

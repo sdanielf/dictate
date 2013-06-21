@@ -32,6 +32,8 @@ class WordPlayer():
         self.current_word = ''
         self.console = console
         self.tbw = config.get_tbw()
+        self.language = config.get_language()
+        self.speed = config.get_speed()
 
         for word in self.text.split():
             while self.paused:
@@ -50,7 +52,7 @@ class WordPlayer():
                 self.check_keys()
 
         espeak = subprocess.Popen(['espeak', word, '-v',
-                                   config.get_language(), '-s', '80',
+                                   self.language, '-s', self.speed,
                                    '--punct', '-w',
                                    '/tmp/dictation.wav'] + self.args,
                                   stdout=FNULL, stderr=FNULL)
