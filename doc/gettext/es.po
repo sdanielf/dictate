@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dictate 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-20 17:53\n"
-"PO-Revision-Date: 2013-06-19 17:53-0300\n"
+"POT-Creation-Date: 2013-06-21 10:36\n"
+"PO-Revision-Date: 2013-06-21 10:37-0300\n"
 "Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
 "Language-Team: Spanish <>\n"
 "Language: es\n"
@@ -83,11 +83,14 @@ msgstr "``q`` para detener el dictado."
 
 # a5c6b6cb0c1a4ba39a8389b9a3fa1149
 #: ../index.rst:34
-msgid "``spacebar`` to pause the dictation until ``enter`` is pressed."
+msgid ""
+"``spacebar`` to pause the dictation until the ``spacebar`` is pressed again."
 msgstr ""
-"``barra espaciadora`` para pausar el dictado hasta que se presione ``enter``."
+"``barra espaciadora`` para pausar el dictado hasta que se presione la ``barra "
+"espaciadora`` nuevamente."
 
 # d1384443e220449b83d916835a760453
 #: ../index.rst:35
 msgid "``s`` to spell the current word."
 msgstr "``s`` para deletrear la palabra actual."
+

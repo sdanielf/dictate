@@ -31,6 +31,11 @@ class WordPlayer():
         self.checker = checker
 
         for word in self.text.split():
+            while self.paused:
+                check = self.checker()
+                if check is not None:
+                    check(self)
+                    self.paused = not self.paused
             self.current_word = word
             print word
             self.speak(word)

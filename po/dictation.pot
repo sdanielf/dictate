@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dictate 0.2\n"
 "Report-Msgid-Bugs-To: francis@sugarlabs.org\n"
-"POT-Creation-Date: 2013-06-20 17:53-0300\n"
+"POT-Creation-Date: 2013-06-21 10:36-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,12 +48,8 @@ msgstr ""
 msgid "spacebar"
 msgstr ""
 
-#: dictation/keys.py:22
-msgid "Press Enter to continue"
-msgstr ""
-
 #: dictation/keys.py:29
-msgid "Pause"
+msgid "Pause/Play"
 msgstr ""
 
 #: dictation/keys.py:30

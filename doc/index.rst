@@ -31,5 +31,5 @@ Once the program is running, some keys can be used to control the dictation.
 The keys are displayed when the program starts. The most important are:
 
 * ``q`` to stop the dictation.
-* ``spacebar`` to pause the dictation until ``enter`` is pressed.
+* ``spacebar`` to pause the dictation until the ``spacebar`` is pressed again.
 * ``s`` to spell the current word.

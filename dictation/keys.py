@@ -19,12 +19,12 @@ from gettext import gettext as _
 
 
 def pause(wordplayer):
-    raw_input(_('Press Enter to continue'))
+    wordplayer.paused = True
 
 
 def spell(wordplayer):
     for i in wordplayer.current_word:
         wordplayer.speak(i)
 
-keys = {' ': (_('Pause'), pause),
+keys = {' ': (_('Pause/Play'), pause),
         's': (_('Spell'), spell)}
