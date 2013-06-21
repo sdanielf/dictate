@@ -23,8 +23,8 @@ def pause(wordplayer):
 
 
 def spell(wordplayer):
-    for i in wordplayer.current_word:
-        wordplayer.speak(i)
+    for i in wordplayer.current_word.decode('utf-8'):
+        wordplayer.speak(i.encode('utf-8'))
 
 keys = {' ': (_('Pause/Play'), pause),
         's': (_('Spell'), spell)}
