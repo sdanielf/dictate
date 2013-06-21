@@ -19,6 +19,8 @@ import os
 import subprocess
 import time
 
+from dictation import config
+
 FNULL = open(os.devnull, 'w')
 
 
@@ -29,6 +31,7 @@ class WordPlayer():
         self.args = args[2:] if len(args) > 2 else []
         self.current_word = ''
         self.console = console
+        self.tbw = config.get_tbw()
 
         for word in self.text.split():
             while self.paused:
@@ -37,7 +40,7 @@ class WordPlayer():
             self.current_word = word
             self.console.print_word(word)
             self.speak(word)
-            end_time = time.time() + len(word) / 2
+            end_time = time.time() + len(word) * self.tbw
             while time.time() < end_time:
                 self.check_keys()
 
