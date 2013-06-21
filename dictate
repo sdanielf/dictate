@@ -27,6 +27,26 @@ import fcntl
 from dictation import i18n
 i18n
 from gettext import gettext as _
+
+from dictation import config
+import argparse
+
+description = _('An eSpeak based dictation utility.')
+epilog = _('''Type "man dictate" to see the Dictate manual.
+Submit bugs to https://github.com/sdanielf/dictate/issues''')
+
+parser = argparse.ArgumentParser(description=description, epilog=epilog)
+parser.add_argument('text', help=_('Text to be dictated'))
+for i in config.settings:
+    arg = config.settings[i]
+    parser.add_argument(arg[0], arg[1], metavar=arg[2], help=arg[3])
+args = parser.parse_args()
+
+for i in config.settings:
+    value = getattr(args, i)
+    if value is not None:
+        config.options[i] = value
+
 from dictation.keys import keys
 from dictation import wordplayer
 
@@ -36,32 +56,6 @@ def quit(word):
 
 
 keys['q'] = (_('Quit'), quit)
-
-helpmsg = _("""Dictate 0.2
------------
-Usage: cmd TEXT [options]
-       cmd `cat /path/to/file.txt` [options] - To read the text from a file
-       cmd TEXT -ves - To dictate a text in Spanish
-       cmd --help - To show this help message and exit
-
-[options] are given to espeak. See espeak --help for more information.
-
-Type "man dictate" to see the Dictate manual.
-Submit bugs to https://github.com/sdanielf/dictate/issues
-""").replace('cmd', sys.argv[0])
-
-if __name__ == '__main__':
-    if len(sys.argv) == 1 or sys.argv[1] == '--help':
-        print helpmsg
-        exit()
-    else:
-        welcomemsg = _('Welcome to Dictate')
-        print welcomemsg
-        print '-' * len(welcomemsg)
-        print _('Keys:')
-        for i in keys:
-            print i.replace(' ', _('spacebar')), ' ', keys[i][0]
-        print
 
 
 class Console:
@@ -100,5 +94,14 @@ class Console:
     def print_message(self, message):
         print message
 
+
+welcomemsg = _('Welcome to Dictate')
+print welcomemsg
+print '-' * len(welcomemsg)
+print _('Keys:')
+for i in keys:
+    print i.replace(' ', _('spacebar')), ' ', keys[i][0]
+print
+
 console = Console()
-player = wordplayer.WordPlayer(sys.argv, console)
+player = wordplayer.WordPlayer(args.text, console)

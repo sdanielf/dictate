@@ -16,26 +16,44 @@
 # MA 02110-1301, USA.
 
 import os
+from gettext import gettext as _
 import ConfigParser
 
 configpath = os.path.join(os.environ['HOME'], '.dictate')
+espeak_args = _('Options given to espeak. (See "espeak --help")')
 
-settings = {'time_between_words': '0.5'}
+settings = {'tbw': ('-t', '--tbw', 'TWB',
+                    _('Time Between Words (Word length * TBW)'), '0.5'),
+            'espeak_options': ('-e', '--espeak_options', 'ARGS',
+                                espeak_args, '')}
+options = {}
 
 if not os.path.exists(configpath):
     config = ConfigParser.RawConfigParser()
     config.add_section('Dictation')
     for setting in settings:
-        config.set('Dictation', setting, settings[setting])
+        config.set('Dictation', setting, settings[setting][-1])
     configfile = open(configpath, 'w')
     config.write(configfile)
     configfile.close()
 
+config = ConfigParser.RawConfigParser()
+config.read(configpath)
+for i in settings:
+    try:
+        options[i] = config.get('Dictation', i)
+    except:
+        options[i] = settings[i][-1]
+
 
 def get_tbw():
-    config = ConfigParser.RawConfigParser()
-    config.read(configpath)
     try:
-        return config.getfloat('Dictation', 'time_between_words')
+        return float(options['tbw'])
     except:
-        return float(settings['time_between_words'])
+        return float(settings['tbw'][-1])
+
+def get_espeak_options():
+    try:
+        return options['espeak_options'].split()
+    except:
+        return settings['espeak_options'][-1].split()

@@ -25,10 +25,10 @@ FNULL = open(os.devnull, 'w')
 
 
 class WordPlayer():
-    def __init__(self, args, console):
+    def __init__(self, text, console):
         self.paused = False
-        self.text = args[1]
-        self.args = args[2:] if len(args) > 2 else []
+        self.text = text
+        self.args = config.get_espeak_options()
         self.current_word = ''
         self.console = console
         self.tbw = config.get_tbw()
