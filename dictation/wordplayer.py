@@ -35,14 +35,11 @@ class WordPlayer():
                 if self.check_keys():
                     self.paused = not self.paused
             self.current_word = word
-            print word
+            self.console.print_word(word)
             self.speak(word)
             end_time = time.time() + len(word) / 2
             while time.time() < end_time:
                 self.check_keys()
-
-    def print_all(self):
-        print ' '.join(self.played_words)
 
     def speak(self, word):
         def wait_for_process(process):

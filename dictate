@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
 
 class Console:
-    def check_keys():
+    def check_keys(self):
         returnvalue = None
         try:
             fd = sys.stdin.fileno()
@@ -84,6 +84,7 @@ class Console:
                     print
                     #print c
                     returnvalue = keys[c][1]
+                    self.print_message(keys[c][0])
             except:
                 pass
             finally:
@@ -92,6 +93,12 @@ class Console:
         except:
             pass
         return returnvalue
+
+    def print_word(self, word):
+        print word
+
+    def print_message(self, message):
+        print message
 
 console = Console()
 player = wordplayer.WordPlayer(sys.argv, console)
