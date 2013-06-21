@@ -5,6 +5,20 @@ Dictate is an eSpeak based dictation program.
 It reads a text slowly, allowing users to write it. Also can pause the
 dictation, spell difficult words and identify punctuation marks.
 
+Dependencies
+------------
+
+* Python 2.7
+* Gstreamer 1.0 (and plugins-good)
+* eSpeak
+* Gettext (and Python bindings)
+
+Build Dependencies
+------------------
+
+* Distutils
+* Sphinx
+
 Installing Dictate from its source code
 ---------------------------------------
 
