@@ -49,7 +49,8 @@ class WordPlayer():
             while process.poll() is None:
                 self.check_keys()
 
-        espeak = subprocess.Popen(['espeak', word, '-s', '80',
+        espeak = subprocess.Popen(['espeak', word, '-v',
+                                   config.get_language(), '-s', '80',
                                    '--punct', '-w',
                                    '/tmp/dictation.wav'] + self.args,
                                   stdout=FNULL, stderr=FNULL)

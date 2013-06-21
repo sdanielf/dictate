@@ -18,14 +18,18 @@
 import os
 from gettext import gettext as _
 import ConfigParser
+from dictation import espeak
 
 configpath = os.path.join(os.environ['HOME'], '.dictate')
 espeak_args = _('Options given to espeak. (See "espeak --help")')
+espeak_voices = espeak.voices()
 
-settings = {'tbw': ('-t', '--tbw', 'TWB',
+settings = {'tbw': ('-t', '--tbw', 'TWB', None,
                     _('Time Between Words (Word length * TBW)'), '0.5'),
-            'espeak_options': ('-e', '--espeak_options', 'ARGS',
-                                espeak_args, '')}
+            'espeak_options': ('-e', '--espeak_options', 'ARGS', None,
+                                espeak_args, ''),
+            'language': ('-l', '--language', 'LANG', espeak_voices,
+                         _('Language voice to speak'), 'default')}
 options = {}
 
 if not os.path.exists(configpath):
@@ -57,3 +61,10 @@ def get_espeak_options():
         return options['espeak_options'].split()
     except:
         return settings['espeak_options'][-1].split()
+
+def get_language():
+    language = options['language']
+    if language in espeak_voices:
+        return language
+    else:
+        return 'default'
