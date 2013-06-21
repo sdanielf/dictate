@@ -64,32 +64,34 @@ if __name__ == '__main__':
         print
 
 
-def check_keys():
-    returnvalue = None
-    try:
-        fd = sys.stdin.fileno()
-        oldterm = termios.tcgetattr(fd)
-        newattr = termios.tcgetattr(fd)
-        newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO
-        termios.tcsetattr(fd, termios.TCSANOW, newattr)
-
-        oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
-        fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
-
+class Console:
+    def check_keys():
+        returnvalue = None
         try:
-            c = sys.stdin.read(1).lower()
-            #print 'Got character', repr(c)
-            if c in keys:
-                print
-                #print c
-                returnvalue = keys[c][1]
+            fd = sys.stdin.fileno()
+            oldterm = termios.tcgetattr(fd)
+            newattr = termios.tcgetattr(fd)
+            newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO
+            termios.tcsetattr(fd, termios.TCSANOW, newattr)
+
+            oldflags = fcntl.fcntl(fd, fcntl.F_GETFL)
+            fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
+
+            try:
+                c = sys.stdin.read(1).lower()
+                #print 'Got character', repr(c)
+                if c in keys:
+                    print
+                    #print c
+                    returnvalue = keys[c][1]
+            except:
+                pass
+            finally:
+                termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
+                fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
         except:
             pass
-        finally:
-            termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
-            fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
-    except:
-        pass
-    return returnvalue
+        return returnvalue
 
-player = wordplayer.WordPlayer(sys.argv, check_keys)
+console = Console()
+player = wordplayer.WordPlayer(sys.argv, console)

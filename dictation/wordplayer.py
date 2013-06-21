@@ -23,27 +23,23 @@ FNULL = open(os.devnull, 'w')
 
 
 class WordPlayer():
-    def __init__(self, args, checker=lambda w: None):
+    def __init__(self, args, console):
         self.paused = False
         self.text = args[1]
         self.args = args[2:] if len(args) > 2 else []
         self.current_word = ''
-        self.checker = checker
+        self.console = console
 
         for word in self.text.split():
             while self.paused:
-                check = self.checker()
-                if check is not None:
-                    check(self)
+                if self.check_keys():
                     self.paused = not self.paused
             self.current_word = word
             print word
             self.speak(word)
             end_time = time.time() + len(word) / 2
             while time.time() < end_time:
-                check = self.checker()
-                if check is not None:
-                    check(self)
+                self.check_keys()
 
     def print_all(self):
         print ' '.join(self.played_words)
@@ -51,9 +47,7 @@ class WordPlayer():
     def speak(self, word):
         def wait_for_process(process):
             while process.poll() is None:
-                check = self.checker()
-                if check is not None:
-                    check(self)
+                self.check_keys()
 
         espeak = subprocess.Popen(['espeak', word, '-s', '80',
                                    '--punct', '-w',
@@ -64,3 +58,10 @@ class WordPlayer():
                                       'uri=file:///tmp/dictation.wav'],
                                      stdout=FNULL, stderr=FNULL)
         wait_for_process(gstreamer)
+
+    def check_keys(self):
+        check = self.console.check_keys()
+        if check is not None:
+            check(self)
+            return True
+        return False
