@@ -36,7 +36,8 @@ epilog = _('''Type "man dictate" to see the Dictate manual.
 Submit bugs to https://github.com/sdanielf/dictate/issues''')
 
 parser = argparse.ArgumentParser(description=description, epilog=epilog)
-parser.add_argument('text', help=_('Text to be dictated'))
+parser.add_argument('text',
+                    help=_('Text or path for a text file to be dictated'))
 for i in config.settings:
     arg = config.settings[i]
     parser.add_argument(arg[0], arg[1], metavar=arg[2],
@@ -47,6 +48,13 @@ for i in config.settings:
     value = getattr(args, i)
     if value is not None:
         config.options[i] = value
+
+if os.path.exists(args.text):
+    _file = open(args.text, 'r')
+    text = _file.read()
+    _file.close()
+else:
+    text = args.text
 
 from dictation.keys import keys
 from dictation import wordplayer
@@ -105,4 +113,4 @@ for i in keys:
 print
 
 console = Console()
-player = wordplayer.WordPlayer(args.text, console)
+player = wordplayer.WordPlayer(text, console)
