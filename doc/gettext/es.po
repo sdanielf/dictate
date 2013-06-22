@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dictate 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-21 10:36\n"
-"PO-Revision-Date: 2013-06-21 10:37-0300\n"
+"POT-Creation-Date: 2013-06-22 12:21\n"
+"PO-Revision-Date: 2013-06-22 11:15-0300\n"
 "Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
 "Language-Team: Spanish <>\n"
 "Language: es\n"
@@ -28,10 +28,10 @@ msgstr "Documentación de Dictate"
 msgid "Command-line usage"
 msgstr "Uso en la linea de comandos"
 
-# 78b74d2828db4c2291d827e67d90734f
+# 51296c9fa3254250bdad9d1b4f836ad6
 #: ../index.rst:7
-msgid "The **first** argument must be the text to speak."
-msgstr "El **primer** argumento debe ser el texto a hablar."
+msgid "The text to speak is given as an argument."
+msgstr "El texto para hablar se proporciona como un argumento."
 
 # 515336f125694f10bee2ebeeb933cfad
 #: ../index.rst:9
@@ -40,34 +40,82 @@ msgstr "Ver un ejemplo::"
 
 # 72e45fc8954a405eb21e45d1aabae27c
 #: ../index.rst:13
-msgid "If you need to load the text from a file, you can type::"
-msgstr "Si necesita cargar el texto desde un archivo, puede escribir::"
+msgid ""
+"If you want to load the text from a file, you can use the file path as the "
+"argument::"
+msgstr ""
+"Si quiere cargar el texto desde un archivo, puede usar la ruta del archivo "
+"como argumento::"
 
 # 78c2bd4af1944da69d534f2255638a96
-#: ../index.rst:17
+#: ../index.rst:18
+msgid "The language can be set through adding the argument ``-l``::"
+msgstr "El lenguaje se puede configurar añadiendo el argumento ``-l``::"
+
+# a09b526b1aad48718b5ac45ab4dea950
+#: ../index.rst:22
+msgid "To see the list of available voices, type ``espeak --voices``."
+msgstr "Para ver la lista de voces disponibles, escriba ``espeak --voices``."
+
+# 3c97ded460b74ca0b368cd033725c67b
+#: ../index.rst:24
 msgid ""
-"Other arguments are given to the espeak command, so the languaje can be set::"
+"The speed of espeak can be controlled with the argument ``-s`` and the time "
+"between words (TBW) can be controlled with the argument ``-t``::"
 msgstr ""
-"Otros argumentos son proporcionados al comando espeak, de esta forma se "
-"puede configurar el idioma::"
+"La velocidad de espeak puede controlarse con el argumento ``-s`` y el tiempo "
+"entre palabras (TBW) con el argumento ``-t``::"
+
+# 78c2bd4af1944da69d534f2255638a96
+#: ../index.rst:29
+msgid ""
+"With ``-e``, some arguments can be given directly to the espeak command, in "
+"the following example the amplitude is set::"
+msgstr ""
+"Con ``-e``, algunos argumentos se le pueden proporcionar directamente al "
+"comando espeak, en el siguiente ejemplo, se regula el volumen::"
 
 # 6ce995c8bb38484e8a6769010df35e75
-#: ../index.rst:21
+#: ../index.rst:34
 msgid "See `eSpeak Usage <http://espeak.sourceforge.net/commands.html>`_."
 msgstr "Ver `Uso de eSpeak <http://espeak.sourceforge.net/commands.html>`_."
 
 # f7aa6e155a6747ba851e4709f5780c26
-#: ../index.rst:23
+#: ../index.rst:36
 msgid "A short help message can be shown by typing::"
 msgstr "Se puede mostrar un mensaje corto de ayuda escribiendo::"
 
+# 511444739b6540c3b18382cff03e6462
+#: ../index.rst:41
+msgid "Configuring default behavior"
+msgstr "Configurando el comportamiento predeterminado"
+
+# fd962236f20146749747bf5cbf7d41b7
+#: ../index.rst:43
+msgid ""
+"Dictate reads the default preferences from the file ``~/.dictate``. All "
+"those settings can be overwritten with command-line arguments."
+msgstr ""
+"Dictate lee las preferencias por defecto del archivo ``~/.dictate``. Todas "
+"estas configuraciones se pueden sobrescribir con los argumentos de la linea "
+"de comandos."
+
+# b68cba14093e45f182cb86ea17def2c9
+#: ../index.rst:46
+msgid ""
+"If you want to set Dictate's language to Spanish by default, you can modify "
+"the language line::"
+msgstr ""
+"Si quiere configurar el idioma predeterminado de Dictate a español, puede "
+"modificar la linea del idioma::"
+
 # 415b6b7ae4614046b1730f81f2c76a7f
-#: ../index.rst:28
+#: ../index.rst:52
 msgid "Runtime options"
 msgstr "Opciones de ejecución"
 
 # 9fd1bf8a9abd4a56815e891e3abb6d11
-#: ../index.rst:30
+#: ../index.rst:54
 msgid ""
 "Once the program is running, some keys can be used to control the dictation. "
 "The keys are displayed when the program starts. The most important are:"
@@ -77,20 +125,23 @@ msgstr ""
 "más importantes son:"
 
 # 8f98ee49fef04d188cb770f6a7bfc5fb
-#: ../index.rst:33
+#: ../index.rst:57
 msgid "``q`` to stop the dictation."
 msgstr "``q`` para detener el dictado."
 
 # a5c6b6cb0c1a4ba39a8389b9a3fa1149
-#: ../index.rst:34
+#: ../index.rst:58
 msgid ""
 "``spacebar`` to pause the dictation until the ``spacebar`` is pressed again."
 msgstr ""
-"``barra espaciadora`` para pausar el dictado hasta que se presione la ``barra "
-"espaciadora`` nuevamente."
+"``barra espaciadora`` para pausar el dictado hasta que se presione la "
+"``barra espaciadora`` nuevamente."
 
 # d1384443e220449b83d916835a760453
-#: ../index.rst:35
+#: ../index.rst:59
 msgid "``s`` to spell the current word."
 msgstr "``s`` para deletrear la palabra actual."
 
+# 78b74d2828db4c2291d827e67d90734f
+#~ msgid "The **first** argument must be the text to speak."
+#~ msgstr "El **primer** argumento debe ser el texto a hablar."

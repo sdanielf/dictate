@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dictate 0.2\n"
 "Report-Msgid-Bugs-To: francis@sugarlabs.org\n"
-"POT-Creation-Date: 2013-06-21 10:36-0300\n"
-"PO-Revision-Date: 2013-06-21 10:36-0300\n"
+"POT-Creation-Date: 2013-06-22 12:21-0300\n"
+"PO-Revision-Date: 2013-06-22 10:15-0300\n"
 "Last-Translator: Daniel Francis <francis@sugarlabs.org>\n"
 "Language-Team: Spanish <>\n"
 "Language: es\n"
@@ -18,49 +18,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: dictate:38
+#: dictate:34
+msgid "An eSpeak based dictation utility."
+msgstr "Una utilidad de dictado basada en eSpeak."
+
+#: dictate:35
+msgid ""
+"Type \"man dictate\" to see the Dictate manual.\n"
+"Submit bugs to https://github.com/sdanielf/dictate/issues"
+msgstr ""
+"Escriba \"man dictate\" para ver el manual de Dictate.\n"
+"Reporte errores en https://github.com/sdanielf/dictate/issues"
+
+#: dictate:40
+msgid "Text or path for a text file to be dictated"
+msgstr "Texto o la ruta de un archivo de texto para dictar"
+
+#: dictate:67
 msgid "Quit"
 msgstr "Salir"
 
-#: dictate:40
-msgid ""
-"Dictate 0.2\n"
-"-----------\n"
-"Usage: cmd TEXT [options]\n"
-"       cmd `cat /path/to/file.txt` [options] - To read the text from a file\n"
-"       cmd TEXT -ves - To dictate a text in Spanish\n"
-"       cmd --help - To show this help message and exit\n"
-"\n"
-"[options] are given to espeak. See espeak --help for more information.\n"
-"\n"
-"Type \"man dictate\" to see the Dictate manual.\n"
-"Submit bugs to https://github.com/sdanielf/dictate/issues\n"
-msgstr ""
-"Dictate 0.2\n"
-"-----------\n"
-"Uso: cmd TEXTO [opciones]\n"
-"     cmd `cat /ruta/del/archivo.txt` [opciones] - Para leer el texto desde "
-"un archivo\n"
-"     cmd TEXTO -ves - Para leer el texto en español\n"
-"     cmd --help - Para mostrar este mensaje de ayuda y salir\n"
-"\n"
-"Las [opciones] se le proporcionan a espeak. Ver espeak --help para más "
-"información.\n"
-"\n"
-"Escriba \"man dictate\" para ver el manual de Dictate.\n"
-"Reporte errores en https://github.com/sdanielf/dictate/issues\n"
-
-#: dictate:58
+#: dictate:107
 msgid "Welcome to Dictate"
 msgstr "Bienvenido a Dictate"
 
-#: dictate:61
+#: dictate:110
 msgid "Keys:"
 msgstr "Teclas:"
 
-#: dictate:63
+#: dictate:112
 msgid "spacebar"
 msgstr "barra espaciadora"
+
+#: dictation/config.py:24
+msgid "Options given to espeak. (See \"espeak --help\")"
+msgstr "Opciones proporcionadas a espeak. (Ver \"espeak --help\")"
+
+#: dictation/config.py:28
+msgid "Time Between Words (Word length * TBW)"
+msgstr "Tiempo Entre Palabras (Longitud de la palabra * TBW)"
+
+#: dictation/config.py:32
+msgid "Language voice to speak"
+msgstr "Idioma de la voz que habla"
+
+#: dictation/config.py:34
+msgid "Speed in words per minute. From 80 to 450"
+msgstr "Velocidad en palabras por minuto. De 80 a 450."
 
 #: dictation/keys.py:29
 msgid "Pause/Play"
@@ -69,6 +73,186 @@ msgstr "Pausar/Reproducir"
 #: dictation/keys.py:30
 msgid "Spell"
 msgstr "Deletrear"
+
+#: /usr/lib64/python2.7/argparse.py:292
+msgid "usage: "
+msgstr "uso: "
+
+#: /usr/lib64/python2.7/argparse.py:800
+msgid ".__call__() not defined"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1084
+#, python-format
+msgid "unknown parser %r (choices: %s)"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1125
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1132
+#, python-format
+msgid "can't open '%s': %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1336
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1374
+msgid "'required' is an invalid argument for positionals"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1394
+#, python-format
+msgid "invalid option string %r: must start with a character %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1415
+#, python-format
+msgid "dest= is required for options like %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1432
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1450
+#, python-format
+msgid "conflicting option string(s): %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1514
+msgid "mutually exclusive arguments must be optional"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1584
+msgid "positional arguments"
+msgstr "Argumentos obligatorios"
+
+#: /usr/lib64/python2.7/argparse.py:1585
+msgid "optional arguments"
+msgstr "Argumentos opcionales"
+
+#: /usr/lib64/python2.7/argparse.py:1600
+msgid "show this help message and exit"
+msgstr "mostrar este mensaje de ayuda y salir"
+
+#: /usr/lib64/python2.7/argparse.py:1606
+msgid "show program's version number and exit"
+msgstr "mostrar el número de versión del programa y salir"
+
+#: /usr/lib64/python2.7/argparse.py:1638
+msgid "cannot have multiple subparser arguments"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1690
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1787
+#, python-format
+msgid "not allowed with argument %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1833 /usr/lib64/python2.7/argparse.py:1847
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1937
+msgid "too few arguments"
+msgstr "Argumentos insuficientes"
+
+#: /usr/lib64/python2.7/argparse.py:1944
+#, python-format
+msgid "argument %s is required"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:1958
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2004
+msgid "expected one argument"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2005
+msgid "expected at most one argument"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2006
+msgid "expected at least one argument"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2008
+#, python-format
+msgid "expected %s argument(s)"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2065
+#, python-format
+msgid "ambiguous option: %s could match %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2127
+#, python-format
+msgid "unexpected option string: %s"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2228
+#, python-format
+msgid "%r is not callable"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2244
+#, python-format
+msgid "invalid %s value: %r"
+msgstr ""
+
+#: /usr/lib64/python2.7/argparse.py:2254
+#, python-format
+msgid "invalid choice: %r (choose from %s)"
+msgstr "Opción inválida: %r (elija una de %s)"
+
+#: /usr/lib64/python2.7/argparse.py:2347
+#, python-format
+msgid "%s: error: %s\n"
+msgstr ""
+
+#~ msgid ""
+#~ "Dictate 0.2\n"
+#~ "-----------\n"
+#~ "Usage: cmd TEXT [options]\n"
+#~ "       cmd `cat /path/to/file.txt` [options] - To read the text from a "
+#~ "file\n"
+#~ "       cmd TEXT -ves - To dictate a text in Spanish\n"
+#~ "       cmd --help - To show this help message and exit\n"
+#~ "\n"
+#~ "[options] are given to espeak. See espeak --help for more information.\n"
+#~ "\n"
+#~ "Type \"man dictate\" to see the Dictate manual.\n"
+#~ "Submit bugs to https://github.com/sdanielf/dictate/issues\n"
+#~ msgstr ""
+#~ "Dictate 0.2\n"
+#~ "-----------\n"
+#~ "Uso: cmd TEXTO [opciones]\n"
+#~ "     cmd `cat /ruta/del/archivo.txt` [opciones] - Para leer el texto "
+#~ "desde un archivo\n"
+#~ "     cmd TEXTO -ves - Para leer el texto en español\n"
+#~ "     cmd --help - Para mostrar este mensaje de ayuda y salir\n"
+#~ "\n"
+#~ "Las [opciones] se le proporcionan a espeak. Ver espeak --help para más "
+#~ "información.\n"
+#~ "\n"
+#~ "Escriba \"man dictate\" para ver el manual de Dictate.\n"
+#~ "Reporte errores en https://github.com/sdanielf/dictate/issues\n"
 
 #~ msgid "Press Enter to continue"
 #~ msgstr "Presione Enter para continuar"

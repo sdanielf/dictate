@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dictate 0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-21 10:36\n"
+"POT-Creation-Date: 2013-06-22 12:21\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,8 +27,8 @@ msgid "Command-line usage"
 msgstr ""
 
 #: ../index.rst:7
-# 78b74d2828db4c2291d827e67d90734f
-msgid "The **first** argument must be the text to speak."
+# 51296c9fa3254250bdad9d1b4f836ad6
+msgid "The text to speak is given as an argument."
 msgstr ""
 
 #: ../index.rst:9
@@ -38,45 +38,75 @@ msgstr ""
 
 #: ../index.rst:13
 # 72e45fc8954a405eb21e45d1aabae27c
-msgid "If you need to load the text from a file, you can type::"
+msgid "If you want to load the text from a file, you can use the file path as the argument::"
 msgstr ""
 
-#: ../index.rst:17
+#: ../index.rst:18
 # 78c2bd4af1944da69d534f2255638a96
-msgid "Other arguments are given to the espeak command, so the languaje can be set::"
+msgid "The language can be set through adding the argument ``-l``::"
 msgstr ""
 
-#: ../index.rst:21
+#: ../index.rst:22
+# a09b526b1aad48718b5ac45ab4dea950
+msgid "To see the list of available voices, type ``espeak --voices``."
+msgstr ""
+
+#: ../index.rst:24
+# 3c97ded460b74ca0b368cd033725c67b
+msgid "The speed of espeak can be controlled with the argument ``-s`` and the time between words (TBW) can be controlled with the argument ``-t``::"
+msgstr ""
+
+#: ../index.rst:29
+# 58e23bda2fff4b76a8c77ef0c4a340fd
+msgid "With ``-e``, some arguments can be given directly to the espeak command, in the following example the amplitude is set::"
+msgstr ""
+
+#: ../index.rst:34
 # 6ce995c8bb38484e8a6769010df35e75
 msgid "See `eSpeak Usage <http://espeak.sourceforge.net/commands.html>`_."
 msgstr ""
 
-#: ../index.rst:23
+#: ../index.rst:36
 # f7aa6e155a6747ba851e4709f5780c26
 msgid "A short help message can be shown by typing::"
 msgstr ""
 
-#: ../index.rst:28
+#: ../index.rst:41
+# 511444739b6540c3b18382cff03e6462
+msgid "Configuring default behavior"
+msgstr ""
+
+#: ../index.rst:43
+# fd962236f20146749747bf5cbf7d41b7
+msgid "Dictate reads the default preferences from the file ``~/.dictate``. All those settings can be overwritten with command-line arguments."
+msgstr ""
+
+#: ../index.rst:46
+# b68cba14093e45f182cb86ea17def2c9
+msgid "If you want to set Dictate's language to Spanish by default, you can modify the language line::"
+msgstr ""
+
+#: ../index.rst:52
 # 415b6b7ae4614046b1730f81f2c76a7f
 msgid "Runtime options"
 msgstr ""
 
-#: ../index.rst:30
+#: ../index.rst:54
 # 9fd1bf8a9abd4a56815e891e3abb6d11
 msgid "Once the program is running, some keys can be used to control the dictation. The keys are displayed when the program starts. The most important are:"
 msgstr ""
 
-#: ../index.rst:33
+#: ../index.rst:57
 # 8f98ee49fef04d188cb770f6a7bfc5fb
 msgid "``q`` to stop the dictation."
 msgstr ""
 
-#: ../index.rst:34
+#: ../index.rst:58
 # a5c6b6cb0c1a4ba39a8389b9a3fa1149
 msgid "``spacebar`` to pause the dictation until the ``spacebar`` is pressed again."
 msgstr ""
 
-#: ../index.rst:35
+#: ../index.rst:59
 # d1384443e220449b83d916835a760453
 msgid "``s`` to spell the current word."
 msgstr ""

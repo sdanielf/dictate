@@ -4,25 +4,49 @@ Dictate's documentation
 Command-line usage
 ------------------
 
-The **first** argument must be the text to speak.
+The text to speak is given as an argument.
 
 See an example::
 
         $ dictate "Hello world. This is a short text to be dictated."
 
-If you need to load the text from a file, you can type::
+If you want to load the text from a file, you can use the file path as
+the argument::
 
-        $ dictate "`/path/to/file.txt`"
+        $ dictate /path/to/file.txt
 
-Other arguments are given to the espeak command, so the languaje can be set::
+The language can be set through adding the argument ``-l``::
 
-        $ dictate "Hola Mundo. Este es un ejemplo corto para dictar." -ves
+        $ dictate -l es "Hola Mundo. Este es un ejemplo corto para dictar."
+
+To see the list of available voices, type ``espeak --voices``.
+
+The speed of espeak can be controlled with the argument ``-s`` and the time
+between words (TBW) can be controlled with the argument ``-t``::
+
+        $ dictate -s 300 -t 0 "How can a clam cram in a clean cream can?"
+
+With ``-e``, some arguments can be given directly to the espeak command, in
+the following example the amplitude is set::
+
+        $ dictate -e "-a 50" "Hello World."
 
 See `eSpeak Usage <http://espeak.sourceforge.net/commands.html>`_.
 
 A short help message can be shown by typing::
 
         $ dictate --help
+
+Configuring default behavior
+----------------------------
+
+Dictate reads the default preferences from the file ``~/.dictate``. All those
+settings can be overwritten with command-line arguments.
+
+If you want to set Dictate's language to Spanish by default, you can modify
+the language line::
+
+        language = es
 
 Runtime options
 ---------------
