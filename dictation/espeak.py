@@ -15,6 +15,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
+import os
 import subprocess
 import re
 
@@ -36,3 +37,21 @@ def voices():
         out[language] = name
 
     return out
+
+espeak_voices = voices()
+FNULL = open(os.devnull, 'w')
+
+
+def run_command(command, function=lambda: None):
+    """Runs a command and runs a function until the command returns a value"""
+    command = subprocess.Popen(command, stdout=FNULL, stderr=FNULL)
+    while command.poll() is None:
+        function()
+    return command
+
+def espeak(word, language, speed, args, checker):
+    output_file = '/tmp/dictation.wav'
+    run_command(['espeak', word, '-v', language, '-s', speed, '--punct', '-w',
+                 output_file] + args, checker)
+    run_command(['gst-launch-1.0', 'playbin', 'uri=file://%s' % output_file],
+                checker)

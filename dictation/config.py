@@ -18,11 +18,10 @@
 import os
 from gettext import gettext as _
 import ConfigParser
-from dictation import espeak
+from dictation.espeak import espeak_voices
 
 configpath = os.path.join(os.environ['HOME'], '.dictate')
 espeak_args = _('Options given to espeak. (See "espeak --help")')
-espeak_voices = espeak.voices()
 
 settings = {'tbw': ('-t', '--tbw', 'TWB', None,
                     _('Time Between Words (Word length * TBW)'), '0.5'),

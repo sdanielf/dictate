@@ -15,13 +15,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA.
 
-import os
-import subprocess
 import time
 
 from dictation import config
-
-FNULL = open(os.devnull, 'w')
+from dictation import espeak
 
 
 class WordPlayer():
@@ -47,20 +44,8 @@ class WordPlayer():
                 self.check_keys()
 
     def speak(self, word):
-        def wait_for_process(process):
-            while process.poll() is None:
-                self.check_keys()
-
-        espeak = subprocess.Popen(['espeak', word, '-v',
-                                   self.language, '-s', self.speed,
-                                   '--punct', '-w',
-                                   '/tmp/dictation.wav'] + self.args,
-                                  stdout=FNULL, stderr=FNULL)
-        wait_for_process(espeak)
-        gstreamer = subprocess.Popen(['gst-launch-1.0', 'playbin',
-                                      'uri=file:///tmp/dictation.wav'],
-                                     stdout=FNULL, stderr=FNULL)
-        wait_for_process(gstreamer)
+        espeak.espeak(word, self.language, self.speed, self.args,
+                      self.check_keys)
 
     def check_keys(self):
         check = self.console.check_keys()
