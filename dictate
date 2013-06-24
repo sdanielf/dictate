@@ -108,8 +108,12 @@ welcomemsg = _('Welcome to Dictate')
 print welcomemsg
 print '-' * len(welcomemsg)
 print _('Keys:')
+spacebar = _('spacebar')
+uspacebar = spacebar.decode('utf-8')
 for i in keys:
-    print i.replace(' ', _('spacebar')), ' ', keys[i][0]
+    key = i.replace(' ', spacebar)
+    ukey = key.decode('utf-8')
+    print '%s%s%s' % (key, ' ' * (len(uspacebar) + 2 - len(ukey)), keys[i][0])
 print
 
 console = Console()
