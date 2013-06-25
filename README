@@ -38,10 +38,5 @@ Using Dictate
 -------------
 
 Use: dictate "your text here"  -- to dictate the given text.
-     dictate "tu texto aquí" -ves -- to use espeak in Spanish [1].
-     dictate "`cat /path/to/file.txt`" -- to read the text from a file.
-
-See also
---------
-
-[1] http://espeak.sourceforge.net/languages.html
+     dictate /path/to/file.txt -- to read the text from a file.
+     dictate --help -- to see a complete reference for each argument.
