@@ -10,6 +10,7 @@ Dependencies
 
 * Python 2.7
 * Gstreamer 0.10 (and plugins-good)
+    -- You are on branch "gstreamer-0.10" for backward compatibility.
 * eSpeak
 * Gettext (and Python bindings)
 

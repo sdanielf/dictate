@@ -38,3 +38,6 @@ nosetests.xml
 # Built documentation
 doc/man/
 *.doctrees
+
+# Other files
+*~
