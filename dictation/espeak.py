@@ -53,5 +53,5 @@ def espeak(word, language, speed, args, checker):
     output_file = '/tmp/dictation.wav'
     run_command(['espeak', word, '-v', language, '-s', speed, '--punct', '-w',
                  output_file] + args, checker)
-    run_command(['gst-launch-1.0', 'playbin', 'uri=file://%s' % output_file],
+    run_command(['gst-launch-0.10', 'playbin', 'uri=file://%s' % output_file],
                 checker)

@@ -9,7 +9,7 @@ Dependencies
 ------------
 
 * Python 2.7
-* Gstreamer 1.0 (and plugins-good)
+* Gstreamer 0.10 (and plugins-good)
 * eSpeak
 * Gettext (and Python bindings)
 
