@@ -26,5 +26,11 @@ def spell(wordplayer):
     for i in wordplayer.current_word.decode('utf-8'):
         wordplayer.speak(i.encode('utf-8'))
 
+
+def quit(wordplayer):
+    wordplayer.stop = True
+
+
 keys = {' ': (_('Pause/Play'), pause),
-        's': (_('Spell'), spell)}
+        's': (_('Spell'), spell),
+        'q': (_('Stop'), quit)}

@@ -64,9 +64,6 @@ def quit(word):
     exit()
 
 
-keys['q'] = (_('Quit'), quit)
-
-
 class Console:
     def check_keys(self):
         returnvalue = None
