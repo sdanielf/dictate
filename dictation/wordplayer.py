@@ -24,6 +24,7 @@ from dictation import espeak
 class WordPlayer():
     def __init__(self, text, console):
         self.paused = False
+        self.stop = False
         self.text = text
         self.args = config.get_espeak_options()
         self.current_word = ''
@@ -33,6 +34,8 @@ class WordPlayer():
         self.speed = config.get_speed()
 
         for word in self.text.split():
+            if self.stop:
+                break
             while self.paused:
                 if self.check_keys():
                     self.paused = not self.paused
@@ -41,7 +44,10 @@ class WordPlayer():
             self.speak(word)
             end_time = time.time() + len(word) * self.tbw
             while time.time() < end_time:
-                self.check_keys()
+                if self.check_keys():
+                    break
+                if self.stop:
+                    break
 
     def speak(self, word):
         espeak.espeak(word, self.language, self.speed, self.args,
