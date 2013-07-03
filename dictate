@@ -40,8 +40,9 @@ parser.add_argument('text',
                     help=_('Text or path for a text file to be dictated'))
 for i in config.settings:
     arg = config.settings[i]
+    choices = arg[3]['options'] if arg[3]['type'] == 'choice' else None
     parser.add_argument(arg[0], arg[1], metavar=arg[2],
-                        choices=arg[3], help=arg[4])
+                        choices=choices, help=arg[4])
 args = parser.parse_args()
 
 for i in config.settings:

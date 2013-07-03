@@ -23,13 +23,15 @@ from dictation.espeak import espeak_voices
 configpath = os.path.join(os.environ['HOME'], '.dictate')
 espeak_args = _('Options given to espeak. (See "espeak --help")')
 
-settings = {'tbw': ('-t', '--tbw', 'TWB', None,
+settings = {'tbw': ('-t', '--tbw', 'TWB', {'type': 'float', 'min': 0},
                     _('Time Between Words (Word length * TBW)'), '0.5'),
-            'espeak_options': ('-e', '--espeak_options', 'ARGS', None,
-                                espeak_args, ''),
-            'language': ('-l', '--language', 'LANG', espeak_voices,
+            'espeak_options': ('-e', '--espeak_options', 'ARGS',
+                               {'type': 'str'}, espeak_args, ''),
+            'language': ('-l', '--language', 'LANG',
+                         {'type': 'choice', 'options': espeak_voices},
                          _('Language voice to speak'), 'default'),
-            'speed': ('-s', '--speed', 'SPEED', None,
+            'speed': ('-s', '--speed', 'SPEED',
+                      {'type': 'int', 'min': 80, 'max': 450},
                       _('Speed in words per minute. From 80 to 450'), '80')}
 options = {}
 
