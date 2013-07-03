@@ -30,7 +30,7 @@ settings = {'tbw': ('-t', '--tbw', 'TWB', None,
             'language': ('-l', '--language', 'LANG', espeak_voices,
                          _('Language voice to speak'), 'default'),
             'speed': ('-s', '--speed', 'SPEED', None,
-                      _('Speed in words per minute. From 80 to 450'), 80)}
+                      _('Speed in words per minute. From 80 to 450'), '80')}
 options = {}
 
 if not os.path.exists(configpath):
